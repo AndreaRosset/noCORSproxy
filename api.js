@@ -9,7 +9,7 @@ app.use(function(req, res, next) {
 
 });
 
-app.get('/require', (req, res) => {
+app.get('/', (req, res) => {
 	if( req.query.site !== undefined){
         return fetch(req.query.site) 
         .then(response => {
