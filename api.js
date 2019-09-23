@@ -1,6 +1,13 @@
 const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 3000
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*")
+  next();
+
+});
+
 app.get('/require', (req, res) => {
 	if( req.request !== undefined){
         return fetch(req.request) 
@@ -8,7 +15,6 @@ app.get('/require', (req, res) => {
             return response.json()
         })
         .then(res_body => { 
-            res.header('Access-Control-Allow-Origin', '127.0.0.1')
             res.json(res_body)
         })
     }
