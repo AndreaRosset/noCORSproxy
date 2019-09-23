@@ -1,0 +1,23 @@
+{
+  "name": "nocorsproxy",
+  "version": "1.0.0",
+  "description": "An easy way around CORS",
+  "main": "api.js",
+  "scripts": {
+    "start": "node api.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreaRosset/noCORSproxy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreaRosset/noCORSproxy/issues"
+  },
+  "homepage": "https://github.com/AndreaRosset/noCORSproxy#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
