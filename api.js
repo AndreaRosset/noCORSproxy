@@ -1,4 +1,5 @@
 const express = require('express')
+const fetch = require('node-fetch')
 const app = express()
 const PORT = process.env.PORT || 3000
 
@@ -9,8 +10,8 @@ app.use(function(req, res, next) {
 });
 
 app.get('/require', (req, res) => {
-	if( req.request !== undefined){
-        return fetch(req.request) 
+	if( req.query.site !== undefined){
+        return fetch(req.query.site) 
         .then(response => {
             return response.json()
         })
@@ -19,8 +20,7 @@ app.get('/require', (req, res) => {
         })
     }
     else{
-        res.se
-        res.json("Error in the parameters.")
+        res.json("req.site: Error")
     }
 })
 
